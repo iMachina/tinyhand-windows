@@ -1,0 +1,18 @@
+[package]
+name = "convert-assets"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "One-off converter from the macOS TinyHand assets to the Windows app's assets/ folder."
+license = "MIT"
+
+# Standalone: not part of any parent workspace.
+[workspace]
+
+[dependencies]
+image = { version = "0.25", default-features = false, features = ["png", "webp"] }
+webp = { version = "0.3", default-features = false }
+resvg = { version = "0.45", default-features = false }
+
+[profile.release]
+opt-level = 3

@@ -1,0 +1,4 @@
+# Link the Microsoft C runtime statically, so tinyhand.exe does not need the
+# Visual C++ Redistributable (VCRUNTIME140.dll) on the machine it runs on.
+[target.'cfg(all(windows, target_env = "msvc"))']
+rustflags = ["-C", "target-feature=+crt-static"]
